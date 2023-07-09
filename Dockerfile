@@ -1,5 +1,5 @@
 FROM openjdk:17
 
-COPY target/new-project-0.0.1-SNAPSHOT.jar .
+COPY target/new-project.jar .
 
 CMD ["java","-jar","new-project.jar"]
