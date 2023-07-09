@@ -11,7 +11,7 @@ public class NewProjectApplication {
 
     @GetMapping
     public String getHelloWorld() {
-        return "Hello world!";
+        return "Hello world auto!";
     }
 
     public static void main(String[] args) {
