@@ -8,7 +8,7 @@ on:
 jobs:
   # This job runs for every push on all branches
   build-and-package:
-    permissions: write-all
+    permissions: write-package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
