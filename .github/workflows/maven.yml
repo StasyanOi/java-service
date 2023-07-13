@@ -31,7 +31,7 @@ jobs:
   # This job runs only for the main branch pushes
   deploy:
     if: github.ref == 'refs/heads/main'
-    needs: package
+    needs: build-and-package
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to AWS
