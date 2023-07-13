@@ -24,7 +24,7 @@ jobs:
       - name: Build with Docker
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u StasyanOi --password-stdin;
-          docker build . --file Dockerfile --tag new-project:latest
+          docker build . --file Dockerfile --tag ghcr.io/stasyanoi/new-project:latest
           docker push ghcr.io/stasyanoi/new-project:latest
   # This job runs only for the main branch pushes
   deploy:
