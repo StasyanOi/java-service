@@ -11,7 +11,7 @@ public class NewProjectApplication {
 
     @GetMapping
     public String getHelloWorld() {
-        return "Hello world finally from docker!";
+        return "Hello world from docker!";
     }
 
     public static void main(String[] args) {
