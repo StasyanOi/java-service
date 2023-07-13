@@ -7,8 +7,8 @@ on:
 
 jobs:
   # This job runs for every push on all branches
-  permissions: write-all
-  build:
+  build and package:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,10 +27,11 @@ jobs:
           echo ${{ secrets.GITHUB_TOKEN }} | sudo docker login ghcr.io -u StasyanOi --password-stdin;
           sudo docker build . --file Dockerfile --tag ghcr.io/stasyanoi/new-project:latest
           sudo docker push ghcr.io/stasyanoi/new-project:latest
+
   # This job runs only for the main branch pushes
   deploy:
     if: github.ref == 'refs/heads/main'
-    needs: build
+    needs: package
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to AWS
