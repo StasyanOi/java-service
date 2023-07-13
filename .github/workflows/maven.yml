@@ -21,8 +21,11 @@ jobs:
       - name: Build with Maven
         run: chmod +x ./mvnw && ./mvnw -B package --file pom.xml
 
-      - name:
-        run: docker build . --file Dockerfile --tag new-project:latest
+      - name: Build with Docker
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u StasyanOi --password-stdin;
+          docker build . --file Dockerfile --tag new-project:latest
+          docker push ghcr.io/stasyanoi/new-project:latest
   # This job runs only for the main branch pushes
   deploy:
     if: github.ref == 'refs/heads/main'
