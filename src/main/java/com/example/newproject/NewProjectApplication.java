@@ -11,7 +11,7 @@ public class NewProjectApplication {
 
     @GetMapping
     public String getHelloWorld() {
-        return "API!";
+        return "Hello world";
     }
 
     public static void main(String[] args) {
