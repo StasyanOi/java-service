@@ -20,6 +20,9 @@ jobs:
 
       - name: Build with Maven
         run: chmod +x ./mvnw && ./mvnw -B package --file pom.xml
+
+      - name:
+        run: docker --version
   # This job runs only for the main branch pushes
   deploy:
     if: github.ref == 'refs/heads/main'
