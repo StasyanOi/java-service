@@ -22,7 +22,7 @@ jobs:
         run: chmod +x ./mvnw && ./mvnw -B package --file pom.xml
 
       - name:
-        run: docker --version
+        run: docker build . --file Dockerfile --tag new-project:latest
   # This job runs only for the main branch pushes
   deploy:
     if: github.ref == 'refs/heads/main'
