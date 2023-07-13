@@ -7,7 +7,7 @@ on:
 
 jobs:
   # This job runs for every push on all branches
-  build and package:
+  build-and-package:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -24,9 +24,9 @@ jobs:
 
       - name: Build with Docker
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | sudo docker login ghcr.io -u StasyanOi --password-stdin;
-          sudo docker build . --file Dockerfile --tag ghcr.io/stasyanoi/new-project:latest
-          sudo docker push ghcr.io/stasyanoi/new-project:latest
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u StasyanOi --password-stdin;
+          docker build . --file Dockerfile --tag ghcr.io/stasyanoi/new-project:latest
+          docker push ghcr.io/stasyanoi/new-project:latest
 
   # This job runs only for the main branch pushes
   deploy:
