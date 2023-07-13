@@ -17,5 +17,4 @@ public class NewProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(NewProjectApplication.class, args);
     }
-
 }
