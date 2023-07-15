@@ -2,11 +2,9 @@ name: Deploy To AWS
 
 on:
   push:
-    branches:
-    - "main"
+    branches: [ "main" ]
   pull_request:
-    branches:
-    - "main"
+    branches: [ "main" ]
 
 jobs:
   # This job runs for every push on all branches
