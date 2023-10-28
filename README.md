@@ -1,3 +1,3 @@
 # java-service
 
-This is a template project for a java library service
+This is a template project for a java web service
